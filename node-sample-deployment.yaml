@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: node-sample
+  name: node-sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: node-sample
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: node-sample
+    spec:
+      containers:
+      - image: felipecruz/fluentd-node-sample
+        name: node-sample
+        resources: {}
+status: {}
