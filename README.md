@@ -3,20 +3,6 @@ Elasticsearch + Fluentd + Kibana in K8s
 
 ## Deploy ElasticSearch
 
-### Persistent Volume
-
-ElasticSearch will be making a PersistentVolumeClaim for its persistence. A PersistenceVolume will be needed.
-
-In this exercise, you create a hostPath PersistentVolume. Kubernetes supports `hostPath` for development and testing on a single-node cluster. A hostPath PersistentVolume uses a file or directory on the Node to emulate network-attached storage.
-
-In a production cluster, you would not use `hostPath`. Instead a cluster administrator would provision a network resource like a Google Compute Engine persistent disk, an NFS share, or an Amazon Elastic Block Store volume. Cluster administrators can also use StorageClasses to set up dynamic provisioning.
-
-```shell
-$ mkdir -p /mnt/data/efk-data && kubectl create -f pv-data.yaml
-```
-
-## Install ElasticSearch
-
 Create a namespace for the installation target.
 
 ```shell
